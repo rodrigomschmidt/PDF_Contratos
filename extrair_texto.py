@@ -20,7 +20,7 @@ def extrair_resultado(texto):
             "Desc": [], #OK
             "QTD": [], #OK
             "QTD_Total": None, #OK
-            "Cliente": None,  #OK
+            "Cliente": None,  #OKdcp
             "Porto": None,  #OK
             "Destino": None, #OK
             "USD": [], #OK
@@ -117,7 +117,6 @@ def main():
     root.withdraw()
 
     pasta_pdf = filedialog.askdirectory(title="Selecione a pasta com os PDF's")
-
     if not pasta_pdf:
         messagebox.showerror("Erro", "Nenhuma pasta foi selecionada")
         sys.exit(1)
@@ -137,12 +136,13 @@ def main():
     for arquivo in arquivos:
         try:
             if arquivo.endswith(".pdf"): 
-                texto = ler_pdf(arquivo)
+                caminho_pdf = os.path.join(pasta_pdf, arquivo)
+                texto = ler_pdf(caminho_pdf)
                 resultados = extrair_resultado(texto)
                 registrar_resultados(resultados, caminho_excel)
                 print(f"Arquivo {arquivo} extraido com sucesso")
         except Exception as e:
-            messagebox.showerror("Erro", f"Ocorreu um erro inesperado {e}")
+            messagebox.showerror("Erro5", f"Ocorreu um erro inesperado {e}")
         
     messagebox.showinfo("Finalizando", "Finalizando programa")
 

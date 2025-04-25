@@ -1,1 +1,1 @@
-C:\Users\Rodrigo.S\Documents\Python\PDF_PCP\resultados.xlsx
+\\srvbmflserver\BARRAMANSA\PUBLICO_BM\Rodrigo\TESTE_PDF\resultados.xlsx
